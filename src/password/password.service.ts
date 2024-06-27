@@ -2,7 +2,6 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Password } from './password.entity';
 import { Repository } from 'typeorm';
-import { User } from 'src/users/user.entity';
 import { CreatePasswordDto, UpdatePasswordDto } from './dto/password.dto';
 
 @Injectable()
@@ -10,8 +9,6 @@ export class PasswordService {
   constructor(
     @InjectRepository(Password)
     private readonly passwordRespository: Repository<Password>,
-    @InjectRepository(User)
-    private readonly userRepository: Repository<User>,
   ) {}
 
   private async getAllPasswords(): Promise<Password[]> {

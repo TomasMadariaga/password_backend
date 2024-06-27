@@ -2,7 +2,6 @@ import {
   Body,
   Controller,
   Delete,
-  ExecutionContext,
   Get,
   Param,
   ParseIntPipe,
@@ -17,7 +16,7 @@ import { UsersService } from 'src/users/users.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { UpdateUserDto } from 'src/users/dto/user.dto';
-import { Request, Response, response } from 'express';
+import { Request, Response } from 'express';
 import { JwtService } from '@nestjs/jwt';
 
 @Controller('auth')
